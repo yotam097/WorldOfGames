@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout code') {
             steps {
-                checkout scm
+                echo "yotam"
             }
         }
         stage('Build') {
