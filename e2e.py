@@ -8,8 +8,9 @@ def test_scores_service(app_url):
     driver.implicitly_wait(10)
     driver.get(app_url)
     score = driver.find_element_by_id('score')
-    if 0 >= score <= 1000:
-        return True
+    if int(score.text) >= 0:
+        if int(score.text) <= 1000:
+            return True
     else:
         return False
 
@@ -17,10 +18,10 @@ def test_scores_service(app_url):
 def main():
     try:
         test_scores_service(app_url)
-        print(0)
+        return 0
     except:
-        print(-1)
+        return -1
 
 
 if __name__ == '__main__':
-    main()
+    print(main())
