@@ -21,6 +21,7 @@ pipeline {
             steps {
                 python ./e2e.py
             }
+        }
         stage('Finalize') {
             steps {
                 docker-compose down
