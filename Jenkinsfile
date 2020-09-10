@@ -7,14 +7,9 @@ pipeline {
         sh ''' echo "Hello I'm alive or not" '''
       }
     }
-    stage('Build') {
-      steps {
-        sh ''' docker build -t wogImage . '''
-      }
-    }
     stage('Run') {
       steps {
-        sh ''' docker-compose up '''
+        sh ''' docker-compose up --build -d '''
       }
     }
     stage('Test') {
