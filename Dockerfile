@@ -1,5 +1,5 @@
 FROM python:3
-COPY WorldOfGames ./
+ADD WorldOfGames ./
 RUN pip install random
 RUN pip install selenium
 RUN pip install flask
