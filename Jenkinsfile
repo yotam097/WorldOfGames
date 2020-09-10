@@ -13,7 +13,7 @@ pipeline {
     }
     stage('Test') {
       steps {
-        sh ''' python ./e2e.py '''
+        sh ''' python3 ./e2e.py '''
       }
     }
     stage('Finalize') {
