@@ -3,12 +3,12 @@ pipeline {
   stages {   
     stage('Build') {
       steps {
-        sh ''' docker build -t Dockerfile . '''
+        sh ''' docker build -t dockerfiletest . '''
       }
     }
     stage('Run') {
       steps {
-        sh ''' docker run Dockerfile '''
+        sh ''' docker run dockerfiletest '''
       }
     }
     stage('Test') {
