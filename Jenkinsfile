@@ -5,6 +5,7 @@ pipeline {
             steps {
                 checkout scm
             }
+        }
         stage('Build') {
             steps {
                 docker build -t wogImage .
