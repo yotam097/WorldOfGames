@@ -9,7 +9,7 @@ pipeline {
     }
     stage('Checkout code') {
       steps {
-        sh ''' git checkout scm '''
+        sh ''' git checkout https://github.com/yotam097/WorldOfGames.git '''
       }
     }
     stage('Build') {
