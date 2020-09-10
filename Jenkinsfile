@@ -2,10 +2,10 @@ pipeline {
  node
  stages {
   stage('Checkout code') {
-    echo "yotam"
+    sh ''' checkout scm '''
   }
   stage('Build') {
-    sh ''' docker build -t wogImage .'''
+    sh ''' docker build -t wogImage . '''
   }
   stage('Run') {
    steps {
