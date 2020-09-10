@@ -1,15 +1,14 @@
 pipeline {
   agent any
   stages {   
-    stage('Validate this is working') {
+    stage('Build') {
       steps {
-        echo "Hello I'm alive"
-        sh ''' echo "Hello I'm alive or not" '''
+        sh ''' docker build -t Dockerfile . '''
       }
     }
     stage('Run') {
       steps {
-        sh ''' docker-compose up --build -d '''
+        sh ''' docker run Dockerfile '''
       }
     }
     stage('Test') {
