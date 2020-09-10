@@ -7,11 +7,6 @@ pipeline {
         sh ''' echo "Hello I'm alive or not" '''
       }
     }
-    stage('Checkout code') {
-      steps {
-        sh ''' git checkout https://github.com/yotam097/WorldOfGames.git '''
-      }
-    }
     stage('Build') {
       steps {
         sh ''' docker build -t wogImage . '''
