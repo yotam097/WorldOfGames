@@ -9,7 +9,6 @@ COPY Scores.txt /
 COPY Utils.py /
 COPY e2e.py /
 COPY chromedriver.exe /
-RUN pip install random
 RUN pip install selenium
 RUN pip install flask
 CMD [ "python3", "./MainGame.py" ]
