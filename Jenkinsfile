@@ -1,14 +1,9 @@
 pipeline {
   agent any
   stages {   
-    stage('Build') {
-      steps {
-        sh ''' docker build -t dockerfiletest . '''
-      }
-    }
     stage('Run') {
       steps {
-        sh ''' docker run dockerfiletest '''
+        sh ''' docker-compose up '''
       }
     }
     stage('Test') {
