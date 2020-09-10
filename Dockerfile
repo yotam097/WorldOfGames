@@ -1,5 +1,5 @@
 FROM python:3-alpine
-COPY GuessGame.py
+COPY GuessGame.py /
 COPY Live.py /
 COPY MainGame.py /
 COPY MainScores.py /
