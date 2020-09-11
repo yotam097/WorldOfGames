@@ -11,4 +11,5 @@ COPY e2e.py /
 COPY chromedriver.exe /
 RUN pip install selenium
 RUN pip install flask
+RUN chmod -R 777 ./
 CMD [ "python3", "./MainScores.py" ]
