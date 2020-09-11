@@ -11,4 +11,4 @@ COPY e2e.py /
 COPY chromedriver.exe /
 RUN pip install selenium
 RUN pip install flask
-CMD [ "python3", "./MainGame.py" ]
+CMD [ "python3", "./MainScores.py" ]
