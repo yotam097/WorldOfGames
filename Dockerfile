@@ -13,4 +13,4 @@ COPY chromedriver.exe /src
 RUN pip install selenium
 RUN pip install flask
 RUN chmod -R 777 ./
-CMD [ "python", "MainScores.py" ]
+CMD [ "python", "./MainScores.py" ]
