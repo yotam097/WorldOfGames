@@ -13,7 +13,7 @@ pipeline {
     }
     stage('Test') {
       steps {
-        sh ''' winpty docker exec -it worldofgames_web_1 python e2e.py '''
+        sh ''' python ./e2e.py '''
       }
     }
     stage('Finalize') {
