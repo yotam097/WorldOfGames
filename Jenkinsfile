@@ -13,7 +13,7 @@ pipeline {
     }
     stage('Finalize') {
       steps {
-        echo "yotam"
+        sh ''' docker-compose down '''
       }
     }
   }
