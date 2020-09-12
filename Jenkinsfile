@@ -13,7 +13,7 @@ pipeline {
     }
     stage('Test') {
       steps {
-        sh ''' docker-compose run worldofgames_web_1 python e2e.py '''
+        sh ''' docker exec -it worldofgames_web_1 python e2e.py '''
       }
     }
     stage('Finalize') {
