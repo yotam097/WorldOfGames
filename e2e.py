@@ -2,7 +2,7 @@ from selenium import webdriver
 
 # Defining app_url as Score's Web URL
 # app_url = input("Please enter the application URL: ")
-app_url = 'http://localhost:8777/'
+app_url = 'http://0.0.0.0:8777/'
 
 
 # A test function that validates if the element "score" exists,and if it's between 0 to 1000
