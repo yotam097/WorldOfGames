@@ -1,14 +1,14 @@
 pipeline {
   agent any
   stages {   
-    stage('Repo pull') {
+    stage('Repo pulling') {
       steps {
         git 'https://github.com/yotam097/WorldOfGames.git'
       }
     }
     stage('Run') {
       steps {
-        sh ''' docker-compose up '''
+        sh ''' docker-compose up -d '''
       }
     }
     stage('Test') {
