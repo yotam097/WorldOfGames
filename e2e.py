@@ -2,7 +2,7 @@ from selenium import webdriver
 import time
 
 # app_url = input("Please enter the application URL: ")
-app_url = 'http://localhost:8777/'
+app_url = 'http://127.0.0.1:8777/'
 
 
 def test_scores_service(app_url):
