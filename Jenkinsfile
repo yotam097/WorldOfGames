@@ -3,12 +3,12 @@ pipeline {
   stages {   
     stage('Repo pull') {
       steps {
-        sh ''' git https://github.com/yotam097/WorldOfGames.git '''
+        git https://github.com/yotam097/WorldOfGames.git
       }
     }
     stage('Run') {
       steps {
-        sh ''' docker-compose up '''
+        sh ''' docker-compose up -d '''
       }
     }
     stage('Test') {
