@@ -1,10 +1,10 @@
 FROM python:3-alpine
 WORKDIR src
-COPY GuessGame.py /src
-COPY Live.py /src
-COPY MainGame.py /src
+# COPY GuessGame.py /src
+# COPY Live.py /src
+# COPY MainGame.py /src
 COPY MainScores.py /src
-COPY MemoryGame.py /src
+# COPY MemoryGame.py /src
 COPY Score.py /src
 COPY Scores.txt /src
 COPY Utils.py /src
