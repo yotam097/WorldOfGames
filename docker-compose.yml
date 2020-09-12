@@ -3,6 +3,4 @@ services:
     web:
         build: .
         ports:
-            - "8777"
-        volumes:
-            - .:/src
+            - "8777:8777"
