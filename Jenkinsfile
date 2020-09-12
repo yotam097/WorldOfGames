@@ -8,12 +8,12 @@ pipeline {
     }
     stage('Run') {
       steps {
-        sh ''' docker-compose up '''
+        sh ''' docker-compose up -d '''
       }
     }
     stage('Test') {
       steps {
-        sh ''' python ./e2e.py '''
+        sh ''' docker exec -it worldofgames_web_1 python e2e.py '''
       }
     }
     stage('Finalize') {
