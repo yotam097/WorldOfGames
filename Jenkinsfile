@@ -3,7 +3,7 @@ pipeline {
   stages {   
     stage('Repo pull') {
       steps {
-        git https://github.com/yotam097/WorldOfGames.git
+        git 'https://github.com/yotam097/WorldOfGames.git'
       }
     }
     stage('Run') {
