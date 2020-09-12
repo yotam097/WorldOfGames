@@ -1,7 +1,7 @@
 from selenium import webdriver
 
-app_url = input("Please enter the application URL: ")
-
+# app_url = input("Please enter the application URL: ")
+app_url = http://localhost:8777/
 
 def test_scores_service(app_url):
     driver = webdriver.Chrome(executable_path="./chromedriver.exe")
