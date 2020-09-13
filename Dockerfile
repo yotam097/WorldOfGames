@@ -4,7 +4,7 @@ COPY MainScores.py /src
 COPY Scores.txt /src
 COPY Utils.py /src
 COPY requirements.txt /src
-RUN pip install -r ./requirements.txt
+RUN python3 -m pip install -r requirements.txt
 RUN chmod -R 777 ./
 EXPOSE 8777
-CMD [ "python", "MainScores.py" ]
+CMD [ "python3", "MainScores.py" ]
