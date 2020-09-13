@@ -6,6 +6,11 @@ pipeline {
         git 'https://github.com/yotam097/WorldOfGames.git'
       }
     }
+    stage('python-requirements') {
+      steps {
+        sh ''' python -m pip install -r requirements.txt '''
+      }
+    }
     stage('Run') {
       steps {
         sh ''' docker-compose up -d '''
