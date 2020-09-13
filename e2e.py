@@ -1,7 +1,6 @@
 from selenium import webdriver
 
 # Defining app_url as Score's Web URL
-# app_url = input("Please enter the application URL: ")
 app_url = 'http://0.0.0.0:8777/'
 
 
