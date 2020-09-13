@@ -1,6 +1,6 @@
 version: '3'
 services:
-    scores_server:
+    web:
         build: .
         ports:
             - 8777:8777
