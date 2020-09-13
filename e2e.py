@@ -11,8 +11,9 @@ def test_scores_service(app_url):
     driver.implicitly_wait(20)
     driver.get(app_url)
     score = driver.find_element_by_id('score')
-    if int(score) >= 0 and int(score) <= 1000:
-        return True
+    if int(score) >= 0:
+        if int(score) <= 1000:
+            return True
     else:
         return False
 
