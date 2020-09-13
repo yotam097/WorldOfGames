@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {   
-    stage('Repo pulling') {
+    stage('Git clone') {
       steps {
         git 'https://github.com/yotam097/WorldOfGames.git'
       }
