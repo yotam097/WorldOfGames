@@ -3,7 +3,8 @@ WORKDIR src
 COPY MainScores.py /src
 COPY Scores.txt /src
 COPY Utils.py /src
-RUN pip install flask
+COPY requirements.txt /src
+RUN pip install -r requirements.txt
 RUN chmod -R 777 ./
 EXPOSE 8777
 CMD [ "python", "MainScores.py" ]
