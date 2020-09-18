@@ -4,3 +4,20 @@ services:
         build: .
         ports:
             - "8777:8777"
+
+    db:
+        image: mysql:5.7
+        restart: always
+        environment:
+            MYSQL_DATABASE: 'Games'
+            MYSQL_USER: 'root'
+            MYSQL_PASSWORD: '12345'
+            MYSQL_ROOT_PASSWORD: '12345'
+        ports:
+            - '3306:3306'
+        expose:
+            - '3306'
+        volumes:
+            - my-Games:/var/lib/mysql
+volumes:
+    my-Games:
