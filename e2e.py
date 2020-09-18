@@ -1,7 +1,7 @@
 from selenium import webdriver
 
 # Defining app_url as Score's Web URL
-app_url = 'http://127.0.0.1:8777/'
+app_url = 'http://localhost:8777/'
 
 
 # A test function that validates if the element "score" exists,and if it's between 0 to 1000
@@ -10,8 +10,8 @@ def test_scores_service(app_url):
     driver.implicitly_wait(20)
     driver.get(app_url)
     score = driver.find_element_by_id('score')
-    if int(score) >= 0:
-        if int(score) <= 1000:
+    if int(score.text) >= 0:
+        if int(score.text) <= 1000:
             return True
     else:
         return False
