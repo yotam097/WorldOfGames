@@ -1,7 +1,7 @@
 import os
 
 
-SCORES_FILE_NAME = ".\\Scores.txt"
+SCORES_FILE_NAME = "Scores.txt"
 file_write = open(SCORES_FILE_NAME, "a")
 file_read = open(SCORES_FILE_NAME, "r")
 
