@@ -8,6 +8,7 @@ import Score
 
 # This function gets user name as an input and returns a welcome message
 def welcome():
+    global name
     name = input("Please enter your name: ")
     print("Hello " + name + """ and welcome to the World of Games (WoG).
 Here you can find many cool games to play.""")
@@ -34,6 +35,7 @@ def load_game():
                 if MemoryGame.is_list_equal(MemoryGame.list_a, MemoryGame.list_b):
                     points = difficulty
                     Score.add_score(points)
+                    Score.add_score_db(name, points)
                     play_again = input("Do you want to play again?, y/n: ")
                     if play_again == "y":
                         screen_cleaner()
@@ -49,6 +51,7 @@ def load_game():
                 if GuessGame.compare_results(difficulty, GuessGame.secret_number):
                     points = difficulty
                     Score.add_score(points)
+                    Score.add_score_db(name, points)
                     play_again = input("Do you want to play again?, y/n: ")
                     if play_again == "y":
                         screen_cleaner()

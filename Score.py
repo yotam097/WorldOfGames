@@ -5,14 +5,19 @@ global points, difficulty, last_score
 conn = pymysql.connect(host='192.168.99.100', port=3306, user='root', password='12345', db='Games')
 
 
-def add_score_db():
+def add_score_db(name, points):
     conn.autocommit(True)
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM Users_Scores;")
+    # cursor.execute("DELETE FROM Games.Users_Scores WHERE User_Name = 'Yotam'")
+    # print(cursor.execute("SELECT Score FROM Users_Scores;"))
     for row in cursor:
-        print(row)
-    # cursor.execute("INSERT into Games.Users_Scores (User_Name, Score) VALUES ('YotamA', 5)")
+        if name in row:
+            cursor.execute("UPDATE Games.Users_Scores SET Score = %s WHERE User_Name = %s", (points, name))
+        else:
+            cursor.execute("INSERT into Games.Users_Scores (User_Name, Score) VALUES (%s, %s)", (name, points))
     cursor.close()
+    conn.close()
 
 
 # This function reads the previews score from the Scores file if exist, if not, it creates a new one and adding the
@@ -40,4 +45,4 @@ def add_score(points):
 
 
 if __name__ == '__main__':
-    add_score_db()
+    add_score_db("Test", 1)
