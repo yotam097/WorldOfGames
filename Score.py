@@ -9,8 +9,10 @@ def add_score_db(name, points):
     conn.autocommit(True)
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM Games.Users_Scores;")
+    # cursor.execute("DELETE FROM Games.Users_Scores WHERE User = 'Yotam'")
     for row in cursor:
-        print(row)
+        db = row
+        print(db)
         if name in row:
             cursor.execute("UPDATE Games.Users_Scores SET Score = %s WHERE User = %s", (points, name))
         else:
@@ -44,4 +46,4 @@ def add_score(points):
 
 
 if __name__ == '__main__':
-    add_score_db("Yotam", 1)
+    add_score_db("John", 0)
