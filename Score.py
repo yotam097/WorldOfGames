@@ -8,14 +8,13 @@ conn = pymysql.connect(host='192.168.99.100', port=3306, user='root', password='
 def add_score_db(name, points):
     conn.autocommit(True)
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM Users_Scores;")
-    # cursor.execute("DELETE FROM Games.Users_Scores WHERE User_Name = 'Yotam'")
-    # print(cursor.execute("SELECT Score FROM Users_Scores;"))
+    cursor.execute("SELECT * FROM Games.Users_Scores;")
     for row in cursor:
+        print(row)
         if name in row:
-            cursor.execute("UPDATE Games.Users_Scores SET Score = %s WHERE User_Name = %s", (points, name))
+            cursor.execute("UPDATE Games.Users_Scores SET Score = %s WHERE User = %s", (points, name))
         else:
-            cursor.execute("INSERT into Games.Users_Scores (User_Name, Score) VALUES (%s, %s)", (name, points))
+            cursor.execute("INSERT into Games.Users_Scores (User, Score) VALUES (%s, %s)", (name, points))
     cursor.close()
     conn.close()
 
@@ -45,4 +44,4 @@ def add_score(points):
 
 
 if __name__ == '__main__':
-    add_score_db("Test", 1)
+    add_score_db("Yotam", 1)
