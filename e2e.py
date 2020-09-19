@@ -1,4 +1,5 @@
 from selenium import webdriver
+import docker
 
 # Defining app_url as Score's Web URL
 app_url = 'http://192.168.99.100:8777/'
@@ -17,15 +18,29 @@ def test_scores_service(app_url):
         return False
 
 
+# A test function that validates if MySQL service is up
+def test_mysql_service():
+    try:
+        client = docker.from_env()
+        for container in client.containers.list():
+            container_list = str(container.image)
+            if 'mysql:5.7' in container_list:
+                return "MySQL service is fully up"
+            else:
+                return "NO"
+    except Exception as e:
+        return "MySQL is not running", e
+
+
 # Main function that runs the test's function and checks if failed or succeeded
 def main():
+    print(test_mysql_service())
     try:
         test_scores_service(app_url)
-        return 0
+        print(0)
     except Exception as e:
-        print(e)
-        return -1
+        print(-1, e)
 
 
 if __name__ == '__main__':
-    print(main())
+    main()
