@@ -43,3 +43,6 @@ def add_score(points):
         outp = int(last_score) + points
         file_overwrite.write(str(outp))
         print("Your score is: ", outp)
+
+        
+add_score_db("John", 0)
